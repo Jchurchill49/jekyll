@@ -1,0 +1,4 @@
+name: Practice Jekyll Site
+markdown: redcarpet
+pygments: true
+baseurl: /jekyll 
