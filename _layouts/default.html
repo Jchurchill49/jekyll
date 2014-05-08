@@ -2,36 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>{{site.title}}</title>
+  <title>{{ site.name }}</title>
 	
  <link rel="icon" href="favicon.ico">	
  
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/grid.css">				
+  <link rel="stylesheet" href="css/normalize.css">			
   <link rel="stylesheet" href="css/styles.css">	
 	
 </head>
 <body>
 	
-	<div class="container showgrid">
-		
-		<!-- Your Content -->
 	<h1>Jekyll Site</h1>
 
 	<header>
 		{% include nav.html %}
 	</header>
-
-		{{content}}
-
+	
+	<article>
 		
+		{{ content }}
 
+	</article>
+		
+	<aside>
+		<h3>My Posts</h3>
+		<ul>
+		  {% for post in site.posts %}
+		    <li>
+		      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+		    </li>
+		  {% endfor %}
+		</ul>	
+
+	</aside>		
+	
 	<footer>
 		{% include nav.html %}
-	</footer>	
+	</footer>
 
-	</div>
-	
   
 </body>
 </html>
